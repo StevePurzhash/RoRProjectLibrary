@@ -1,0 +1,6 @@
+<%= simple_form_for @book do |f| %>
+<%= f.input :title, label: "Назва Книги" %>
+<%= f.input :description, label: "Опис" %>
+<%= f.input :author, label: "Автор" %>
+<%= f.submit "Додати Книгу" %>
+<% end %>
