@@ -2,6 +2,15 @@
 <h3><%= @book.author %></h3>
 <p><%= @book.description %></p>
 
-<%= link_to "Назад",  root_path%>
-<%= link_to "Редагувати", edit_book_path(@book) %>
-<%= link_to "Видалити", book_path(@book), method: :delete, data:{confirm: "Ви впевнені?" } %>
+<%= link_to "Назад",  root_path %>
+
+<% if user_signed_in? %>
+
+<% if @book.user_id == current_user.id %>
+
+	<%= link_to "Редагувати", edit_book_path(@book) %>
+	<%= link_to "Видалити", book_path(@book), method: :delete, data:{confirm: "Ви впевнені?" } %>
+
+
+	<% end %>
+	<% end %>
