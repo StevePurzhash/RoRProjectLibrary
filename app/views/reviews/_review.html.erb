@@ -1,0 +1,7 @@
+<p><%= review.rating %></p>
+<p><%= review.comment %></p>
+
+<%= link_to "Редагувати", edit_book_review_path)review.book,review) %>
+<%= link_to "Видалити", book_review_path(review.book, review), method: :delete, data: {
+	confirm: "Ви впневнені"}
+	} %>
